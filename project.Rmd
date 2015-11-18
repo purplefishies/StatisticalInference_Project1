@@ -1,0 +1,39 @@
+---
+title: "Investigating Exponential random variables"
+author: "Jimi Damon"
+date: "06/21/2015"
+output: pdf_document
+hitheme: tomorrow
+mode: selfcontained
+highlighter: highlight.js
+framework: io2012
+url:
+  assets: ../../assets
+  lib: ../../librariesNew
+widgets: mathjax
+---
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.path='./figure/',
+                     warning=FALSE, message=FALSE)
+```
+
+## Overview
+
+## Simulations 
+
+### Sample mean versus Theoretical mean
+1. Sample mean 
+
+### Sample variance vs. Theoretical Variance
+
+2. Varaubce of the samples
+
+### Distribution
+
+
+3. Distribution is close to normal
+
+
+
+
+## Conclusion
