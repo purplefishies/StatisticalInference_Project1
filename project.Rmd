@@ -19,20 +19,54 @@ knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.path='./figure/',
 
 ## Overview
 
-## Simulations 
+```{r}
+set.seed(314159)
+lambda=0.2
+```
 
+## Simulations 
+```{r,echo=TRUE}
+sims <- sapply(1:1000,function(x){ mean(rexp(40,lambda)) } )
+```
 ### Sample mean versus Theoretical mean
-1. Sample mean 
+
+```{r,echo=TRUE,eval=TRUE}
+mean_sims <- mean(sims)
+mean_sims
+```
+
+The expected mean for an exponential distribution would be $\frac{1}{\lambda}$ which equals
+
+$$\begin{eqnarray*}
+E[X] & = & \frac{1}{\lambda} & \newline
+     & = & \frac{1}{0.2} & \newline
+E[X] & = & 5
+\end{eqnarray*}
+$$
+
+
 
 ### Sample variance vs. Theoretical Variance
+```{r,echo=TRUE,eval=TRUE}
+var_sims <- var(sims)
+var_sims
+```
+Expected variance would be $\frac{1}{\lambda^2}$
 
-2. Varaubce of the samples
+
 
 ### Distribution
 
 
 3. Distribution is close to normal
 
+```{r}
+hist(sims)
+```
+
+The skewness of this distribution tends to favor a fatter tail going ot 
+positive $\infty$. This makes sense since the exponential distribution is limited 
+at x = 0  and cannot contribute anymore mass in range as $x \to -\infty$.
 
 
 
