@@ -51,7 +51,12 @@ $$
 var_sims <- var(sims)
 var_sims
 ```
-Expected variance would be $\frac{1}{\lambda^2}$
+The Expected variance for an exponential random variable would be 
+$$
+\begin{equation}
+\frac{1}{\lambda^2}
+\end{equation}
+$$
 
 
 
@@ -66,7 +71,7 @@ hist(sims)
 
 The skewness of this distribution tends to favor a fatter tail going ot 
 positive $\infty$. This makes sense since the exponential distribution is limited 
-at x = 0  and cannot contribute anymore mass in range as $x \to -\infty$.
+at x = 0  and cannot contribute anymore mass in range $x : \left( -\infty, 0 \right)$.
 
 
 
