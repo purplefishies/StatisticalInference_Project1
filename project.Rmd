@@ -25,9 +25,16 @@ lambda=0.2
 ```
 
 ## Simulations 
+
+I make use of the sapply function to return average of a 40 element
+exponential function for every element in a list of length 1000.
+
 ```{r,echo=TRUE}
 sims <- sapply(1:1000,function(x){ mean(rexp(40,lambda)) } )
 ```
+
+This creates a 1000 element list in the variable sims.
+
 ### Sample mean versus Theoretical mean
 
 ```{r,echo=TRUE,eval=TRUE}
@@ -44,6 +51,20 @@ E[X] & = & 5
 \end{eqnarray*}
 $$
 
+#### t-Test of this mean value
+
+In order to determine how close this sample mean $\mu$ = 
+```r round(mean(sims),2)``` 
+is to our ideal value of 5, I will run a t-test.  I will
+be testing the null hypothesis that the average of these 1000 
+averages of sets of 40 exponential random variables is equivalent to
+5.  
+
+I set up the t-test as 
+
+$H_0 :  \mu= 5$
+
+P value is 
 
 
 ### Sample variance vs. Theoretical Variance
@@ -71,8 +92,7 @@ hist(sims)
 
 The skewness of this distribution tends to favor a fatter tail going ot 
 positive $\infty$. This makes sense since the exponential distribution is limited 
-at x = 0  and cannot contribute anymore mass in range $x : \left( -\infty, 0 \right)$.
-
+at x = 0  and cannot contribute anymore mass in range $x : \left( -\infty, 0 \right]$.
 
 
 ## Conclusion
