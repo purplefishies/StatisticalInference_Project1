@@ -88,7 +88,7 @@ We would get $\frac{1}{(0.2)^2}$ = 25.
 3. Distribution is close to normal
 
 ```{r}
-hist(sims)
+qplot(sims) + geom_vline(xintercept=mean(sims))
 ```
 
 The skewness of this distribution tends to favor a fatter tail going to
