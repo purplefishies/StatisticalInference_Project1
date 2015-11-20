@@ -19,7 +19,11 @@ knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.path='./figure/',
 
 ## Overview
 
+
+
 ```{r}
+library(dplyr)
+library(ggplot2)
 set.seed(314159)
 lambda=0.2
 ```
@@ -88,7 +92,7 @@ We would get $\frac{1}{(0.2)^2}$ = 25.
 3. Distribution is close to normal
 
 ```{r}
-qplot(sims) + geom_vline(xintercept=mean(sims))
+qplot(sims) + geom_vline(xintercept=mean(sims),colour="red")
 ```
 
 The skewness of this distribution tends to favor a fatter tail going to
