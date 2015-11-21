@@ -64,9 +64,9 @@ averages of sets of 40 exponential random variables is equivalent to
 5.  
 
 ```{r}
-ggplot(data.frame(x=sims),aes(x=x)) + geom_histogram(aes(y=..density..)) + 
-                          geom_vline(xintercept=mean(sims),colour="red") + 
-geom_line(data=(seq(0,10,0.001) %>% data.frame(x=.,y=dnorm(x=.,mean=5,sd=var(sims)))),aes(x=x,y=y))
+ggplot(data.frame(x=sims),aes(x=x)) + geom_histogram(aes(y=..density..),binwidth=0.5) + 
+geom_vline(xintercept=mean(sims),colour="red") + 
+geom_line(data=(seq(0,10,0.001) %>% data.frame(x=.,y=dnorm(x=.,mean=5,sd=sqrt(var(sims))))),aes(x=x,y=y))
 ```
 Our plot clearly shows a normal shaped plot centered around the red line represnting the theoretical mean
 of the distribution.
