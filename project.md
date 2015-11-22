@@ -61,7 +61,7 @@ $$
 #### t-Test of this mean value
 
 In order to determine how close this sample mean $\mu$ = 
-``4.99`` 
+``4.989`` 
 is to our ideal value of 5, I will run a t-test.  I will
 be testing the null hypothesis that the average of these 1000 
 averages of sets of 40 exponential random variables is equivalent to
@@ -96,31 +96,30 @@ matches the theoretical.
 ### Sample variance vs. Theoretical Variance
 
 ```r
-var_sims <- var(sims)
-var_sims
+sd_sims <- sd(sims)
+sd_sims
 ```
 
 ```
-## [1] 0.656853
+## [1] 0.8104647
 ```
-The Expected variance for an exponential random variable would be 
+The expected standard deviation for an exponential random variable would be 
 $$ 
 \begin{aligned}
-\frac{1}{\lambda^2}
+\frac{1}{\lambda}
 \end{aligned}
 $$
 
-We would get $\frac{1}{(0.2)^2} / sqrt(100))$ = 0.79.
+We would get $\frac{1}{(0.2)^2} / sqrt(40))$ = 0.79.
 
-
-
-### Distribution
-
-
-3. Distribution is close to normal
+As we can see , both of these values ( variance and mean ) are very
+close to their expected values and the graph shows a distribution that is very 
+close to a normal distribution.
 
 The skewness of this distribution tends to favor a fatter tail going to
 positive $\infty$. This makes sense since the exponential distribution is limited 
 at x = 0  and cannot contribute anymore mass in range $x : \left( -\infty, 0 \right]$.
 
-## Conclusion
+
+
+

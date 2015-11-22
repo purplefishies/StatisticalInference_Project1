@@ -244,7 +244,7 @@ E[X] & = & 5
 <h4>t-Test of this mean value</h4>
 
 <p>In order to determine how close this sample mean \(\mu\) = 
-<code>4.99</code> 
+<code>4.989</code> 
 is to our ideal value of 5, I will run a t-test.  I will
 be testing the null hypothesis that the average of these 1000 
 averages of sets of 40 exponential random variables is equivalent to
@@ -275,33 +275,29 @@ matches the theoretical.</p>
 
 <h3>Sample variance vs. Theoretical Variance</h3>
 
-<pre><code class="r">var_sims &lt;- var(sims)
-var_sims
+<pre><code class="r">sd_sims &lt;- sd(sims)
+sd_sims
 </code></pre>
 
-<pre><code>## [1] 0.656853
+<pre><code>## [1] 0.8104647
 </code></pre>
 
-<p>The Expected variance for an exponential random variable would be 
+<p>The expected standard deviation for an exponential random variable would be 
 \[ 
 \begin{aligned}
-\frac{1}{\lambda^2}
+\frac{1}{\lambda}
 \end{aligned}
 \]</p>
 
-<p>We would get \(\frac{1}{(0.2)^2} / sqrt(100))\) = 0.79.</p>
+<p>We would get \(\frac{1}{(0.2)^2} / sqrt(40))\) = 0.79.</p>
 
-<h3>Distribution</h3>
-
-<ol>
-<li>Distribution is close to normal</li>
-</ol>
+<p>As we can see , both of these values ( variance and mean ) are very
+close to their expected values and the graph shows a distribution that is very 
+close to a normal distribution.</p>
 
 <p>The skewness of this distribution tends to favor a fatter tail going to
 positive \(\infty\). This makes sense since the exponential distribution is limited 
 at x = 0  and cannot contribute anymore mass in range \(x : \left( -\infty, 0 \right]\).</p>
-
-<h2>Conclusion</h2>
 
 </body>
 
