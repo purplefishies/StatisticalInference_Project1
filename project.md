@@ -12,14 +12,12 @@ url:
   lib: ../../librariesNew
 widgets: mathjax
 ---
-```{r global_options, include=FALSE}
-knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.path='./figure/',
-                     warning=FALSE, message=FALSE)
-```
+
 
 ## Overview
 
-```{r}
+
+```r
 library(dplyr)
 library(ggplot2)
 set.seed(314159)
@@ -31,7 +29,8 @@ lambda=0.2
 I make use of the sapply function to return average of a 40 element
 exponential function for every element in a list of length 1000.
 
-```{r,echo=TRUE}
+
+```r
 sims <- sapply(1:1000,function(x){ mean(rexp(40,lambda)) } )
 ```
 
@@ -39,9 +38,14 @@ This creates a 1000 element list in the variable sims.
 
 ### Sample mean versus Theoretical mean
 
-```{r,echo=TRUE,eval=TRUE}
+
+```r
 mean_sims <- mean(sims)
 mean_sims
+```
+
+```
+## [1] 4.98902
 ```
 
 The expected mean for an exponential distribution would be $\frac{1}{\lambda}$ which equals
@@ -57,34 +61,47 @@ $$
 #### t-Test of this mean value
 
 In order to determine how close this sample mean $\mu$ = 
-```r round(mean(sims),4)``` 
+``4.989`` 
 is to our ideal value of 5, I will run a t-test.  I will
 be testing the null hypothesis that the average of these 1000 
 averages of sets of 40 exponential random variables is equivalent to
 5.  
 
-```{r}
+
+```r
 ggplot(data.frame(x=sims),aes(x=x)) + geom_histogram(aes(y=..density..),binwidth=0.5) + 
 geom_vline(xintercept=mean(sims),colour="red") + 
 geom_line(data=(seq(0,10,0.001) %>% data.frame(x=.,y=dnorm(x=.,mean=5,sd=sqrt(var(sims))))),aes(x=x,y=y))
 ```
+
+![plot of chunk unnamed-chunk-4](./figure/unnamed-chunk-4-1.png) 
 Our plot clearly shows a normal shaped plot centered around the red line represnting the theoretical mean
 of the distribution.
 
 I set up the t-test as $H_0 :  \mu= 5$
 
 P value for this is 
-```{r,echo=TRUE}
+
+```r
 tt <- t.test(sims,mu=5)
 tt$p.value
+```
+
+```
+## [1] 0.6684281
 ```
 Since this value is greater than  $\alpha$(0.05), then we can accept our NULL hypothesis that our sample mean
 matches the theoretical.
 
 ### Sample variance vs. Theoretical Variance
-```{r,echo=TRUE,eval=TRUE}
+
+```r
 sd_sims <- sd(sims)
 sd_sims
+```
+
+```
+## [1] 0.8104647
 ```
 The expected standard deviation for an exponential random variable would be 
 $$ 
