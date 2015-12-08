@@ -15,5 +15,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 # And last but not lesat
 
 
-[Jump to the head](#Sample-Readme)
+[Jump to the head](#sample-readme)
 
