@@ -14,6 +14,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ccmake -DCMAKE_INSTALL_PREFIX=/some/path/Dir ..
 ~~~
 
+```bash
+ccmake -DCMAKE_INSTALL_PREFIX=/some/path/Dir ..
+```
+
 
 
 
