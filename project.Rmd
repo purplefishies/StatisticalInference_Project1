@@ -1,7 +1,7 @@
 ---
 title: "Investigating Exponential random variables"
 author: "Jimi Damon"
-date: "11/18/2015"
+date: "12/4/2016"
 output: pdf_document
 hitheme: tomorrow
 mode: selfcontained
